@@ -37,7 +37,7 @@ button {
 
 /* main header */
 .header-gradient {
-    background: url('n09/resources/gradient.png') repeat-x scroll 0 -16px;
+    background: url('resources/gradient.png') repeat-x scroll 0 -16px;
     height: 130px;
     position: absolute;
     z-index: 0;
@@ -45,7 +45,7 @@ button {
     width: 100%;
 }
 .header-bg {
-    background: url('n09/resources/background.png') no-repeat scroll 0 -520px;
+    background: url('resources/background.png') no-repeat scroll 0 -520px;
     width: 600px;
     height: 130px;
     overflow: hidden;
@@ -128,7 +128,7 @@ button {
 .banner {
     height: 248px;
     width: 839px;
-    background: url("n09/resources/beautyfox_banner.png");
+    background: url("resources/beautyfox_banner.png");
     position: relative;
     left: 45px;
 }
