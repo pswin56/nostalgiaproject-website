@@ -6,3 +6,6 @@ this is a work in project and the code made by me (in n09 folder) sucks so don't
 WRONG! this is the greatest github repo to ever be made!!!
 
 ![aero fafa blue](resources/aero_fafa_blue.png)
+
+# credit.
+thank to the cool user Marbles from the nostalgia project discord server for the nostalgia project logo and n09 logo
