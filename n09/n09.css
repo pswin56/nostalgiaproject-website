@@ -10,11 +10,15 @@ body {
     color: #333333;
     position: relative;
 }
-.main-content-LAWL {
-    background: linear-gradient(to bottom, #daf3fd, white 30%);
-    margin: -5px 2px 0 2px;
-    height: 100%;
+#BodyContainer {
+    position: relative;
+    min-height: 100%;
     width: 962px;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    background-color: #FFFFFF;
 }
 .borders {
     background: linear-gradient(to bottom, #daf3fd, #afe2fa 75%);
@@ -32,9 +36,24 @@ button {
 
 
 /* main header */
-.header {
+.header-gradient {
+    background: url('resources/gradient.png') repeat-x scroll 0 -16px;
+    height: 130px;
+    position: absolute;
+    z-index: 0;
+    height: 130px;
+    width: 100%;
+}
+.header-bg {
     background: url('resources/background.png') no-repeat scroll 0 -520px;
-    width: 962px;
+    width: 600px;
+    height: 130px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    height: 130px;
+    width: 600px;
+    margin: 0px 171px;
 }
 
 
@@ -58,13 +77,15 @@ button {
 
 
 
-
 /* central header */
 .branding {
     position: absolute;
-    left:  225px;
+    left: 10px;
 }
-
+#BingChilling {
+    position: absolute;
+    right: 435px;
+}
 
 
 
@@ -72,7 +93,8 @@ button {
 .navigation {
     font-size: 12.5pt;
     display: flex;
-    margin: 23px 0 0 17px;
+    margin: 50px 0 0 17px;
+    position: absolute;
 }
 .spacer-bottom-links {
     margin: 0 0 0 25px;
@@ -100,7 +122,7 @@ button {
 
 /* main content */
 .actual-main-content {
-    margin: 50px 10px 0 10px;
+    margin: 135px 10px 0 10px;
     background-color: white;
 }
 .banner {
