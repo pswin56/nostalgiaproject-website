@@ -19,19 +19,8 @@ body {
     margin-right: auto;
     text-align: left;
     background-color: #FFFFFF;
+    margin-top: -5px;
 }
-.borders {
-    background: linear-gradient(to bottom, #daf3fd, #afe2fa 75%);
-    margin: 0 210px 0 210px;
-}
-.shadow {
-    filter: drop-shadow(0px 70px 3px #00000025);
-}
-button {
-    appearance: none;
-    border: none;
-}
-
 
 
 
@@ -79,12 +68,15 @@ button {
 
 /* central header */
 .branding {
-    position: absolute;
-    left: 10px;
+    position: relative;
+    left: 13px;
+    top: 15px;
 }
 #BingChilling {
-    position: absolute;
-    right: 435px;
+    position: relative;
+    left: 250px;
+    appearance: none;
+    border: 1px black solid;
 }
 
 
@@ -93,11 +85,11 @@ button {
 .navigation {
     font-size: 12.5pt;
     display: flex;
-    margin: 50px 0 0 17px;
-    position: absolute;
+    margin: 20px 0 0 18px;
+    position: relative;
 }
-.spacer-bottom-links {
-    margin: 0 0 0 25px;
+.navigation a {
+    margin: 0 25px 0 0;
 }
 .navigation a.selected {
     color: black;
@@ -121,18 +113,19 @@ button {
 
 
 /* main content */
-.actual-main-content {
-    margin: 135px 10px 0 10px;
+#MainContent {
+    margin: 30px 10px 0 62px !important;
     background-color: white;
 }
-.banner {
+
+/* banner */
+#Banner {
     height: 248px;
     width: 839px;
     background: url("resources/beautyfox_banner.png");
-    position: relative;
-    left: 45px;
+
 }
-.banner p {
+#Banner p {
     font-weight: bold;
     color: white;
     font-size: 22pt;
@@ -142,20 +135,30 @@ button {
     top: 50px;
     left: 25px;
 }
-.banner button {
+#Banner a {
     background-color: #0066cc;
     color: white;
     border: 1px white double;
     padding: 5px 10px;
-    position: absolute;
+    position: relative;
     left: 25px;
-    bottom: 25px;
+    bottom: -35px;
+    text-decoration: none;
 }
-.banner button:hover {
+#Banner a:hover {
     background-color: color-mix(in srgb, #0066cc, white 25%);
     cursor: pointer;
 }
-.banner button:active {
+#Banner a:active {
     background-color: color-mix(in srgb, #0066cc, black 25%);
     cursor: pointer;
+}
+
+/* the thingy uhhh h2 tags yayayayaya */
+#MainContent h2 {
+    color: #404570;
+    font-weight: regular;
+}
+#Latest li {
+    margin: 0 0 16px -12px;
 }
