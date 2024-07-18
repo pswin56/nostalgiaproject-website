@@ -1,0 +1,111 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+/* Navbar container */
+.navbar {
+  width: 721px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding-left: 2px;
+  padding-right: 2px;
+  background-image: linear-gradient(to bottom, #ffffff , #C1C1C0);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #547E99;
+  font-family: Arial;
+}
+
+/* The dropdown container */
+.dropdown {
+  padding: 0px;
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  border-style: dotted;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-color: #A6A6A6;
+  outline: none;
+  color: #333333;
+  padding: 14px 16px;
+  background-color: inherit;
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: white;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white;
+  text-decoration: underline;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+footer{
+  width: 721px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background-image: url(m_head_blend.png);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #547E99;
+  font-family: Arial;
+}
+
+body {
+  padding: 10px;
+  margin: auto;
+  width: 912px;
+  background-color: #E0EFF6;
+  background-image: url(m_head_blend.png);
+  background-repeat: repeat-x;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #599BD1;
+  color: #000000;
+  font-size: 70%;
+  font-family: Tahoma,Verdana,'Segoe UI',sans-serif
+}
+
+a:link {
+  text-decoration: none; 
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+html{
+  background-image: url(bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  height: 100%;
+}
