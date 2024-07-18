@@ -3,6 +3,43 @@
 	<head>
 		<title>Nostalgia 07 | The Nostalgia Project</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script>
+			//   HOVER EFFECT FOR LOGO   //
+			window.loaded = window.loaded || [];
+			window.loaded.push(() => {
+				let hovering = false;
+				const logo = document.getElementById("vista-logo");
+				const animend = () => {
+					console.log("animationend");
+					if (!hovering) {
+						logo.classList.remove("hover");
+						logo.removeEventListener("animationend", animend);
+					} else {
+						// restart the animation
+						logo.classList.remove("hover");
+						setTimeout(() => {
+							logo.classList.add("hover");
+						});
+					}
+				};
+				logo.addEventListener("mouseenter", () => {
+					logo.classList.add("hover");
+					hovering = true;
+					// when the animation ends
+					logo.addEventListener("animationend", animend);
+				});
+				logo.addEventListener("mouseleave", () => {
+					hovering = false;
+				});
+			});
+		</script>
+		<script>
+			const onload = () => {
+				loaded.forEach((l) => l());
+				document.removeEventListener("DOMContentLoaded", onload);
+			};
+			document.addEventListener("DOMContentLoaded", onload);
+		</script>
 	</head>
 	<body>
 		<h1 id="clarity">The "Wow" never stopped.</h1>
@@ -27,7 +64,7 @@
 					</a>
 				</div>
 				<div class="nav-footer">
-					<div class="vista-logo">
+					<div id="vista-logo">
 						<img src="./img/vista-logo.webp" />
 					</div>
 				</div>

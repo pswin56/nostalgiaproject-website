@@ -164,14 +164,68 @@ h6 {
 	justify-content: center;
 }
 
-.vista-logo,
-.vista-logo > img {
+#vista-logo,
+#vista-logo > img {
 	width: 86px;
 	position: relative;
 	z-index: 6;
 }
 
-.vista-logo:after {
+@keyframes bounce-img {
+	0%,
+	100% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: translateY(-20px) scaleX(0.8) scaleY(1.1);
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes bounce-reflection {
+	0%,
+	100% {
+		transform: scaleY(-1) translateY(0);
+		animation-timing-function: ease-out;
+		filter: blur(3px);
+	}
+	50% {
+		transform: scaleY(-1) scaleX(0.8) translateY(-20px);
+		animation-timing-function: ease-in;
+		filter: blur(6px);
+		opacity: 0.5;
+	}
+}
+
+@keyframes bounce-shadow {
+	0%,
+	100% {
+		width: 100%;
+		animation-timing-function: ease-out;
+	}
+	50% {
+		width: 80%;
+		animation-timing-function: ease-in;
+		background-color: rgba(2, 17, 65, 0.3);
+	}
+}
+
+#vista-logo.hover > img {
+	animation: bounce-img 0.5s;
+	transform-origin: center;
+}
+
+#vista-logo.hover:after {
+	animation: bounce-reflection 0.5s;
+}
+
+#vista-logo.hover:before {
+	animation: bounce-shadow 0.5s;
+}
+
+#vista-logo:after {
+	pointer-events: none;
 	filter: blur(3px);
 	content: "";
 	position: absolute;
@@ -192,15 +246,16 @@ h6 {
 	transform: scaleY(-1);
 }
 
-.vista-logo:before {
+#vista-logo:before {
+	pointer-events: none;
 	--shadow-height: 12px;
 	content: "";
 	position: absolute;
 	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
 	height: var(--shadow-height);
-	/* bottom should be 0 - (--shadow-height / 3) */
 	bottom: calc(0px - (var(--shadow-height) / 3));
-	left: 0;
 	background-color: rgba(2, 17, 65, 0.514);
 	filter: blur(4px);
 	border-radius: 50%;
