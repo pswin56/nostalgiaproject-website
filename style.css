@@ -33,11 +33,9 @@
   border-left-width: 1px;
   border-right-width: 1px;
   border-color: #A6A6A6;
-  outline: none;
   color: #333333;
   padding: 15px 5px;
   background-color: inherit;
-  margin: 0; /* Important for vertical align on mobile phones */
 }
 
 /* Add a red background color to navbar links on hover */
