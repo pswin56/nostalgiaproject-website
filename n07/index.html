@@ -4,13 +4,56 @@
 		<title>Nostalgia 07 | The Nostalgia Project</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script>
+			//   CONTENT MANAGER   //
+			window.loaded = window.loaded || [];
+			window.loaded.push(() => {
+				const pages = document.getElementById("pages");
+				const header = document.getElementById("header-target");
+				const content = document.getElementById("content-target");
+
+				// firstly, get all buttons with a data-page attribute
+				const btns = Array.from(
+					document.querySelectorAll("[data-page]")
+				);
+				const pageMap = {};
+				const navigate = (page, btn) => {
+					pageMap[page] = pages.querySelector(
+						`[data-page="${page}"]`
+					);
+					btn
+						? btn.addEventListener("click", () => {
+								// convert this-text to This Text
+								const pageName = page
+									.split("-")
+									.map((w) => w[0].toUpperCase() + w.slice(1))
+									.join(" ");
+								header.innerHTML = pageName;
+								content.innerHTML = pageMap[page].innerHTML;
+						  })
+						: (() => {
+								const pageName = page
+									.split("-")
+									.map((w) => w[0].toUpperCase() + w.slice(1))
+									.join(" ");
+								header.innerHTML = pageName;
+								content.innerHTML = pageMap[page].innerHTML;
+						  })();
+				};
+				btns.forEach((btn) => {
+					const page = btn.getAttribute("data-page");
+					navigate(page, btn);
+				});
+				navigate("screenshots");
+			});
+		</script>
+		<script>
 			//   HOVER EFFECT FOR LOGO   //
 			window.loaded = window.loaded || [];
 			window.loaded.push(() => {
 				let hovering = false;
+				let spin = false;
 				const logo = document.getElementById("vista-logo");
 				const animend = () => {
-					console.log("animationend");
 					if (!hovering) {
 						logo.classList.remove("hover");
 						logo.removeEventListener("animationend", animend);
@@ -27,6 +70,31 @@
 					hovering = true;
 					// when the animation ends
 					logo.addEventListener("animationend", animend);
+				});
+				logo.addEventListener("mousedown", () => {
+					if (spin) return;
+					spin = true;
+					const spinAnimEndHandler = () => {
+						logo.classList.add("spin");
+						logo.removeEventListener(
+							"animationend",
+							spinAnimEndHandler
+						);
+						const onSpinEnd = () => {
+							logo.classList.remove("spin");
+							spin = false;
+							logo.removeEventListener("animationend", onSpinEnd);
+						};
+						setTimeout(
+							() =>
+								logo.addEventListener(
+									"animationend",
+									onSpinEnd
+								),
+							10
+						);
+					};
+					logo.addEventListener("animationend", spinAnimEndHandler);
 				});
 				logo.addEventListener("mouseleave", () => {
 					hovering = false;
@@ -50,25 +118,72 @@
 			</div>
 			<div id="nav">
 				<div class="buttons">
-					<a href="#">
-						<span>The Experience</span>
-					</a>
-					<a href="#">
-						<span>The Features</span>
-					</a>
-					<a href="#">
-						<span>The Community</span>
-					</a>
-					<a href="#">
-						<span>Get Ready</span>
-					</a>
+					<button data-page="screenshots">
+						<span>Screenshots</span>
+					</button>
+					<button data-page="download">
+						<span>Download</span>
+					</button>
+					<button data-page="community">
+						<span>Community</span>
+					</button>
 				</div>
 				<div class="nav-footer">
-					<div id="vista-logo">
-						<img src="./img/vista-logo.webp" />
+					<div id="logo-container">
+						<div id="vista-logo">
+							<img src="./img/vista-logo.webp" />
+						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="pages" hidden>
+			<div data-page="screenshots">
+				<div id="screenshots">
+					<div class="screenshot-showcase left">
+						<img src="https://placehold.co/275x160/EEE/31343C" />
+						<div>
+							<h2>Aero Glass</h2>
+							<p>
+								Nostalgia 07 features OpenGlass, a revolutionary
+								mod which restores Aero Glass on later Windows
+								versions.
+							</p>
+						</div>
+					</div>
+					<div class="screenshot-showcase right">
+						<img src="https://placehold.co/275x160/EEE/31343C" />
+						<div>
+							<h2>Control Panel</h2>
+							<p>
+								Windows Vista's Control Panel has been fully
+								restored, replacing the later Settings app.
+							</p>
+						</div>
+					</div>
+					<div class="screenshot-showcase left">
+						<img src="https://placehold.co/275x160/EEE/31343C" />
+						<div>
+							<h2>Explorer Icons</h2>
+							<p>
+								For the first time in a 10 to Vista ISO, Windows
+								Explorer has fully restored icons in the menu
+								bar.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-page="download">
+				<p>Download</p>
+			</div>
+			<div data-page="community">
+				<p>Community</p>
+			</div>
+		</div>
+		<div id="page-content">
+			<h1 id="header-target"></h1>
+			<div id="content-target"></div>
 		</div>
 	</body>
 </html>
