@@ -1,22 +1,108 @@
-/* the body, borders and shadow */
+/* the body, borders, shadow and buttons */
 body {
     background: #daf3fd;
     min-height: 100%;
     height: 100%;
     margin: 0px;
     text-align: center;
-    font-family: segoe ui, verdana, arial, sans-serif;
+    font-family: "Segoe UI", "Noto Sans", verdana, arial, sans-serif;
     font-size: .83em;
     color: #333333;
     position: relative;
 }
-
-.header {
-    background: transparent url('resources/background.png') no-repeat scroll 0 -520px;
+.main-content-LAWL {
+    background: linear-gradient(to bottom, #daf3fd, white 30%);
+    margin: -5px 2px 0 2px;
+    height: 100%;
+    width: 962px;
+}
+.borders {
+    background: linear-gradient(to bottom, #daf3fd, #afe2fa 75%);
+    margin: 0 210px 0 210px;
+}
+.shadow {
+    filter: drop-shadow(0px 70px 3px #00000025);
+}
+button {
+    appearance: none;
+    border: none;
 }
 
 
 
+
+/* main header */
+.header {
+    background: url('resources/background.png') no-repeat scroll 0 -520px;
+    width: 962px;
+}
+
+
+
+/* the top links */
+.links {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin: 5px 0px;
+    position: relative;
+    right: -815px;
+}
+.links .spacer-top-links {
+    width: auto;
+}
+.country {
+    font-weight: bold;
+    margin: 0 5px 0 0;
+}
+
+
+
+
+/* central header */
+.branding {
+    position: absolute;
+    left:  225px;
+}
+
+
+
+
+/* navigation links */
+.navigation {
+    font-size: 12.5pt;
+    display: flex;
+    margin: 23px 0 0 17px;
+}
+.spacer-bottom-links {
+    margin: 0 0 0 25px;
+}
+.navigation a.selected {
+    color: black;
+}
+.navigation a {
+    text-decoration: none;
+    color: #2775df;
+}
+.navigation a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    color: #0069af;
+}
+.navigation a.selected:hover {
+    color: #0069af;
+    text-decoration: none;
+}
+
+
+
+
+/* main content */
+.actual-main-content {
+    margin: 50px 10px 0 10px;
+    background-color: white;
+}
 .banner {
     height: 248px;
     width: 839px;
@@ -34,67 +120,20 @@ body {
     top: 50px;
     left: 25px;
 }
-
-
-.main-content-LAWL {
-    background: linear-gradient(to bottom, #daf3fd, white 30%);
-    margin: -5px 2px 0 2px;
-    height: 100%;
-}
-.borders {
-    background: linear-gradient(to bottom, #daf3fd, #afe2fa 75%);
-    margin: 0 210px 0 210px;
-}
-.shadow {
-    filter: drop-shadow(0px 70px 3px #00000025);
-}
-
-/* the top links */
-.links {
-    display: flex;
-    align-items: center;
-
-}
-.country {
-    font-weight: bold;
-    margin: 0 5px 0 0;
-}
-
-/* central header */
-.branding {
+.banner button {
+    background-color: #0066cc;
+    color: white;
+    border: 1px white double;
+    padding: 5px 10px;
     position: absolute;
-    left:  225px;
+    left: 25px;
+    bottom: 25px;
 }
-
-/* navigation links */
-.navigation {
-    font-size: 12.5pt;
-    display: flex;
-    margin: 23px 0 0 17px;
+.banner button:hover {
+    background-color: color-mix(in srgb, #0066cc, white 25%);
+    cursor: pointer;
 }
-#spacer {
-    margin: 0 0 0 25px;
-}
-.navigation a.selected {
-    color: black;
-}
-.navigation a {
-    text-decoration: none;
-    color: #2775df;
-}
-.navigation a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 4.5px;
-    color: #0069af;
-}
-.navigation a.selected:hover {
-    color: #0069af;
-    text-decoration: none;
-}
-
-/* main content */
-.actual-main-content {
-    margin: 50px 10px 0 10px;
-    background-color: white;
+.banner button:active {
+    background-color: color-mix(in srgb, #0066cc, black 25%);
+    cursor: pointer;
 }

@@ -72,7 +72,7 @@ footer{
   margin-top: 10px;
   margin-bottom: 10px;
   overflow: hidden;
-  background-image: url(m_head_blend.png);
+  background-image: url(resources/m_head_blend.png);
   border-style: solid;
   border-width: 1px;
   border-color: #547E99;
@@ -84,7 +84,7 @@ body {
   margin: auto;
   width: 912px;
   background-color: #E0EFF6;
-  background-image: url(m_head_blend.png);
+  background-image: url(resources/m_head_blend.png);
   background-repeat: repeat-x;
   border-style: solid;
   border-width: 1px;
@@ -103,7 +103,7 @@ a:hover {
 }
 
 html{
-  background-image: url(bg.png);
+  background-image: url(resources/bg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding-bottom: 20px;
