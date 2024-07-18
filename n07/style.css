@@ -5,13 +5,37 @@
 
 body {
 	background-color: #071108 !important;
-	background-image: url(./img/landscape.png);
-	background-repeat: no-repeat;
 }
 
 * {
 	color: white;
 	font-family: "Segoe Modern", "Segoe UI", sans-serif;
+}
+
+#bg,
+#fg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: transform 0.01s;
+}
+
+/* bg.style.transform = `translateY(${scroll * 0.75}px)`;
+fg.style.transform = `translateY(${scroll * 0.5}px)`; */
+
+#bg {
+	transform: translateY(calc(var(--scroll) * 0.75px));
+}
+
+#fg {
+	transform: translateY(calc(var(--scroll) * 0.5px));
+}
+
+#bg-container {
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 h1,
@@ -22,6 +46,10 @@ h5,
 h6 {
 	font-weight: 300;
 	letter-spacing: -0.75px;
+}
+
+p {
+	font-size: 13px;
 }
 
 #clarity {
@@ -282,6 +310,7 @@ h6 {
 		rgba(0, 0, 0, 0.75) 16px,
 		transparent 48px
 	); */
+	opacity: 0.5;
 	z-index: -1;
 	left: 0;
 	width: 100%;

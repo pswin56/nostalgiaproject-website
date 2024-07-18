@@ -47,6 +47,23 @@
 			});
 		</script>
 		<script>
+			//   PARALLAX SCROLL ON #bg and #fg   //
+			window.loaded = window.loaded || [];
+			window.loaded.push(() => {
+				const bg = document.getElementById("bg");
+				const fg = document.getElementById("fg");
+				const container = document.getElementById("bg-container");
+				window.addEventListener("scroll", () => {
+					const scroll = window.scrollY;
+					container.style.setProperty("--scroll", `${scroll}px`);
+					const bottom = fg.getBoundingClientRect().bottom;
+					const rect = bg.getBoundingClientRect();
+					const bottomInBg = bottom - rect.top - 8;
+					bg.style.maskImage = `linear-gradient(to bottom, black ${bottomInBg}px, transparent ${bottomInBg}px)`;
+				});
+			});
+		</script>
+		<script>
 			//   HOVER EFFECT FOR LOGO   //
 			window.loaded = window.loaded || [];
 			window.loaded.push(() => {
@@ -110,6 +127,10 @@
 		</script>
 	</head>
 	<body>
+		<div id="bg-container">
+			<img src="./img/landscape-bg.png" id="bg" />
+			<img src="./img/landscape-fg.png" id="fg" />
+		</div>
 		<h1 id="clarity">The "Wow" never stopped.</h1>
 		<div id="nav-container">
 			<div id="nav-bg">
@@ -143,7 +164,7 @@
 					<div class="screenshot-showcase left">
 						<img src="https://placehold.co/275x160/EEE/31343C" />
 						<div>
-							<h2>Aero Glass</h2>
+							<h2>Glass is class</h2>
 							<p>
 								Nostalgia 07 features OpenGlass, a revolutionary
 								mod which restores Aero Glass on later Windows
@@ -154,17 +175,17 @@
 					<div class="screenshot-showcase right">
 						<img src="https://placehold.co/275x160/EEE/31343C" />
 						<div>
-							<h2>Control Panel</h2>
+							<h2>Inconsistency, solved</h2>
 							<p>
 								Windows Vista's Control Panel has been fully
-								restored, replacing the later Settings app.
+								restored, replacing most of the Settings app.
 							</p>
 						</div>
 					</div>
 					<div class="screenshot-showcase left">
 						<img src="https://placehold.co/275x160/EEE/31343C" />
 						<div>
-							<h2>Explorer Icons</h2>
+							<h2>Recordbreaker</h2>
 							<p>
 								For the first time in a 10 to Vista ISO, Windows
 								Explorer has fully restored icons in the menu
@@ -175,7 +196,12 @@
 				</div>
 			</div>
 			<div data-page="download">
-				<p>Download</p>
+				<div id="download">
+					<p>
+						Switch to a superior computing alternative; download
+						now.
+					</p>
+				</div>
 			</div>
 			<div data-page="community">
 				<p>Community</p>
@@ -185,5 +211,20 @@
 			<h1 id="header-target"></h1>
 			<div id="content-target"></div>
 		</div>
+		<p
+			style="
+				position: fixed;
+				top: 8px;
+				left: 680px;
+				text-align: right;
+				opacity: 0.25;
+				margin: 0;
+				line-height: 1.4;
+			"
+		>
+			&copy; 2024 The Nostalgia Project<br />Page made by
+			<a target="_blank" href="https://x.com/notnullptr">nullptr</a>,
+			assets owned by Micro$oft
+		</p>
 	</body>
 </html>
