@@ -1,0 +1,208 @@
+@font-face {
+	font-family: "Segoe Modern";
+	src: url("font/SegoeUI-VF.ttf");
+}
+
+body {
+	background-color: #071108 !important;
+	background-image: url(./img/landscape.png);
+	background-repeat: no-repeat;
+}
+
+* {
+	color: white;
+	font-family: "Segoe Modern", "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 300;
+	letter-spacing: -0.75px;
+}
+
+#clarity {
+	--text-color: #102a72;
+	color: var(--text-color);
+	text-shadow: 0 0 0px var(--text-color), 0 0 0px var(--text-color),
+		0 0 2px color-mix(in srgb, var(--text-color), transparent 50%);
+	font-size: 29px;
+	position: absolute;
+	top: 188px;
+	left: 324px;
+	text-align: right;
+}
+
+#nav-container {
+	position: absolute;
+	top: 117px;
+	left: 99px;
+	width: 173px;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+#nav {
+	border-radius: 6px;
+	background-color: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(3px);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25),
+		0 0 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.shine {
+	filter: blur(8px);
+	mask-image: linear-gradient(black, transparent 75%);
+	position: absolute;
+	top: var(--top);
+	left: var(--left);
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: var(--height) calc(var(--width) / 2) 0 calc(var(--width) / 2);
+	border-color: var(--color) transparent transparent transparent;
+	transform: rotate(var(--rotate));
+	z-index: -1;
+}
+
+.shine:nth-child(1) {
+	--width: 50px;
+	--height: 800px;
+	--rotate: -4deg;
+	--color: #ffffff6c;
+	--top: -200px;
+	--left: 18px;
+}
+
+.shine:nth-child(2) {
+	--width: 50px;
+	--height: 1000px;
+	--rotate: 165deg;
+	--color: #ffffff45;
+	--top: -400px;
+	--left: 78px;
+}
+
+#nav::before {
+	border-radius: 6px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: radial-gradient(
+		ellipse 300px 500px at 0px 220px,
+		rgba(255, 255, 255, 0) 50%,
+		rgba(255, 255, 255, 0.2) 50.25%
+	);
+	/* fade out towards bottom */
+	mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 150px);
+}
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 6px;
+}
+
+.buttons > * {
+	text-decoration: none;
+	height: 60px;
+	position: relative;
+	border-bottom: solid thin rgba(255, 255, 255, 0.1);
+	box-shadow: inset 0 -1px 0 0px rgba(0, 0, 0, 0.25);
+	background: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.2) 0%,
+		rgba(255, 255, 255, 0.1) 20%,
+		rgba(255, 255, 255, 0.05) 20.25%,
+		rgba(255, 255, 255, 0.1) 100%
+	);
+}
+
+.buttons > * > span {
+	position: absolute;
+	bottom: 5px;
+	left: 7px;
+	font-weight: 300;
+	font-size: 19px;
+	color: #ebebeb;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5),
+		0 0 1px white;
+}
+
+.buttons > *:hover {
+	background: linear-gradient(
+		to bottom,
+		rgba(24, 124, 224, 0.3) 0%,
+		rgba(7, 223, 227, 0.2) 48%,
+		rgba(12, 132, 212, 0.4) 52%,
+		rgba(0, 217, 255, 0.2) 100%
+	);
+}
+
+#nav-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	z-index: -1;
+}
+
+.nav-footer {
+	width: 176px;
+	height: 166px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.vista-logo,
+.vista-logo > img {
+	width: 86px;
+	position: relative;
+	z-index: 6;
+}
+
+.vista-logo:after {
+	filter: blur(3px);
+	content: "";
+	position: absolute;
+	top: -10px;
+	mask-image: linear-gradient(
+		to top,
+		transparent 0px,
+		rgba(0, 0, 0, 0.75) 16px,
+		transparent 48px
+	);
+	z-index: -1;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(./img/vista-logo.webp) no-repeat;
+	background-size: contain;
+	transform-origin: bottom center;
+	transform: scaleY(-1);
+}
+
+.vista-logo:before {
+	--shadow-height: 12px;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: var(--shadow-height);
+	/* bottom should be 0 - (--shadow-height / 3) */
+	bottom: calc(0px - (var(--shadow-height) / 3));
+	left: 0;
+	background-color: rgba(2, 17, 65, 0.514);
+	filter: blur(4px);
+	border-radius: 50%;
+	z-index: 5;
+}
