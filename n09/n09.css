@@ -1,0 +1,100 @@
+/* the body, borders and shadow */
+body {
+    background: #daf3fd;
+    min-height: 100%;
+    height: 100%;
+    margin: 0px;
+    text-align: center;
+    font-family: segoe ui, verdana, arial, sans-serif;
+    font-size: .83em;
+    color: #333333;
+    position: relative;
+}
+
+.header {
+    background: transparent url('resources/background.png') no-repeat scroll 0 -520px;
+}
+
+
+
+.banner {
+    height: 248px;
+    width: 839px;
+    background: url("resources/beautyfox_banner.png");
+    position: relative;
+    left: 45px;
+}
+.banner p {
+    font-weight: bold;
+    color: white;
+    font-size: 22pt;
+    width: 300px;
+    text-align: start;
+    position: relative;
+    top: 50px;
+    left: 25px;
+}
+
+
+.main-content-LAWL {
+    background: linear-gradient(to bottom, #daf3fd, white 30%);
+    margin: -5px 2px 0 2px;
+    height: 100%;
+}
+.borders {
+    background: linear-gradient(to bottom, #daf3fd, #afe2fa 75%);
+    margin: 0 210px 0 210px;
+}
+.shadow {
+    filter: drop-shadow(0px 70px 3px #00000025);
+}
+
+/* the top links */
+.links {
+    display: flex;
+    align-items: center;
+
+}
+.country {
+    font-weight: bold;
+    margin: 0 5px 0 0;
+}
+
+/* central header */
+.branding {
+    position: absolute;
+    left:  225px;
+}
+
+/* navigation links */
+.navigation {
+    font-size: 12.5pt;
+    display: flex;
+    margin: 23px 0 0 17px;
+}
+#spacer {
+    margin: 0 0 0 25px;
+}
+.navigation a.selected {
+    color: black;
+}
+.navigation a {
+    text-decoration: none;
+    color: #2775df;
+}
+.navigation a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4.5px;
+    color: #0069af;
+}
+.navigation a.selected:hover {
+    color: #0069af;
+    text-decoration: none;
+}
+
+/* main content */
+.actual-main-content {
+    margin: 50px 10px 0 10px;
+    background-color: white;
+}
