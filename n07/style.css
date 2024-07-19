@@ -13,24 +13,25 @@ body {
 }
 
 #bg,
+#mid,
 #fg {
 	position: absolute;
 	top: 0;
 	left: 0;
-	transition: transform 0.01s;
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
 }
 
-/* bg.style.transform = `translateY(${scroll * 0.75}px)`;
-fg.style.transform = `translateY(${scroll * 0.5}px)`; */
-
 #bg {
-	transform: translateY(calc(var(--scroll) * 0.75));
+	transform: translateY(calc(var(--scroll) * 0.7));
+}
+
+#mid {
+	transform: translateY(calc(var(--scroll) * 0.6));
 }
 
 #fg {
-	transform: translateY(calc(var(--scroll) * 0.5));
+	transform: translateY(var(--fg-pos));
 }
 
 #bg-container {
@@ -38,8 +39,11 @@ fg.style.transform = `translateY(${scroll * 0.5}px)`; */
 	position: absolute;
 	top: 0;
 	left: 0;
+	width: 983px;
+	height: 403px;
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
+	--fg-pos: calc(var(--scroll) * 0.5);
 }
 
 h1,

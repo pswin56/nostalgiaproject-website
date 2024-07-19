@@ -51,30 +51,27 @@
 			window.loaded = window.loaded || [];
 			window.loaded.push(() => {
 				const bg = document.getElementById("bg");
+				const mid = document.getElementById("mid");
 				const fg = document.getElementById("fg");
 				const container = document.getElementById("bg-container");
 				let lastPos = 0;
 				const anim = () => {
 					const pos = window.scrollY;
 					if (pos !== lastPos) {
-						bg.style.transform = `scale3d(1,1,1) translateY(${
-							pos * 0.75
-						}px)`;
-						fg.style.transform = `scale3d(1,1,1) translateY(${
-							pos * 0.5
-						}px)`;
-						// container.style.filter = `blur(${pos * 0.025}px)`;
+						container.style.setProperty("--scroll", pos + "px");
 						const bottom = fg.getBoundingClientRect().bottom;
 						const rect = bg.getBoundingClientRect();
+						const midRect = mid.getBoundingClientRect();
 						const bottomInBg = bottom - rect.top - 8;
+						const bottomInMid = bottom - midRect.top - 8;
 						bg.style.maskImage = `linear-gradient(to bottom, black ${bottomInBg}px, transparent ${bottomInBg}px)`;
+						mid.style.maskImage = `linear-gradient(to bottom, black ${bottomInMid}px, transparent ${bottomInMid}px)`;
 					}
 					lastPos = pos;
-					// requestAnimationFrame(anim);
+					requestAnimationFrame(anim);
 				};
 
-				// requestAnimationFrame(anim);
-				setInterval(anim, 1000 / 60);
+				requestAnimationFrame(anim);
 			});
 		</script>
 		<script>
@@ -143,6 +140,7 @@
 	<body>
 		<div id="bg-container">
 			<img src="./img/landscape-bg.png" id="bg" />
+			<img src="./img/landscape-mid.png" id="mid" />
 			<img src="./img/landscape-fg.png" id="fg" />
 		</div>
 		<h1 id="clarity">The "Wow" never stopped.</h1>
