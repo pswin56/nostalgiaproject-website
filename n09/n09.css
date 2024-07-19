@@ -1,4 +1,4 @@
-/* the body, borders, shadow and buttons */
+/* the body and links */
 body {
     background: #daf3fd;
     min-height: 100%;
@@ -8,18 +8,21 @@ body {
     font-family: "Segoe UI", "Noto Sans", verdana, arial, sans-serif;
     font-size: .83em;
     color: #333333;
-    position: relative;
 }
 #BodyContainer {
     position: relative;
     min-height: 100%;
-    width: 962px;
+    width: 942px;
     vertical-align: top;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+    z-index: 0;
     background-color: #FFFFFF;
     margin-top: -5px;
+}
+a {
+    text-decoration:  none;
 }
 
 
@@ -29,19 +32,17 @@ body {
     background: url('resources/gradient.png') repeat-x scroll 0 -16px;
     height: 130px;
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     height: 130px;
     width: 100%;
 }
 .header-bg {
     background: url('resources/background.png') no-repeat scroll 0 -520px;
-    width: 600px;
+    width: 100%;
     height: 130px;
     overflow: hidden;
     position: absolute;
-    z-index: 0;
-    height: 130px;
-    width: 600px;
+    z-index: -1;
     margin: 0px 171px;
 }
 
@@ -49,19 +50,19 @@ body {
 
 /* the top links */
 .links {
-    display: flex;
-    align-items: center;
+    width: 315px;
     margin-left: auto;
-    margin: 5px 0px;
-    position: relative;
-    right: -815px;
+    margin-right: 10px;
+    padding-top: 10px;
+    z-index: 1;
 }
-.links .spacer-top-links {
-    width: auto;
+.links span {
+    padding: 0 5px;
 }
 .country {
+    display: inline-block;
     font-weight: bold;
-    margin: 0 5px 0 0;
+    margin: 0 7px 0 0;
 }
 
 
@@ -74,18 +75,37 @@ body {
 }
 #BingChilling {
     position: relative;
-    left: 250px;
+    left: 300px;
+    top: -15px;
+}
+.searchbar {
+    background: white no-repeat url("resources/BINGchilling.png"); 
+    background-position: 90% 100%;
     appearance: none;
     border: 1px black solid;
+    width: 300px;
+    padding: 6px;
+    color: #515151;
+    font-style: italic;
+    font-size: 8.5pt;
+}
+.searchbarbutton {
+    appearance: none;
+    border: none;
+    background: no-repeat url("resources/searchbarbutton.png");
+    width: 20px;
+    height: 20px; 
+    position: absolute;
+    margin: 3px 0 0 -23px;
 }
 
 
 
 /* navigation links */
 .navigation {
-    font-size: 12.5pt;
+    font-size: 12pt;
     display: flex;
-    margin: 20px 0 0 18px;
+    margin: 0px 0 0 18px;
     position: relative;
 }
 .navigation a {
@@ -114,7 +134,7 @@ body {
 
 /* main content */
 #MainContent {
-    margin: 30px 10px 0 62px !important;
+    margin: 45px 0 0 50px !important;
     background-color: white;
 }
 
@@ -133,15 +153,15 @@ body {
     text-align: start;
     position: relative;
     top: 50px;
-    left: 25px;
+    left: 15px;
 }
 #Banner a {
     background-color: #0066cc;
     color: white;
-    border: 1px white double;
-    padding: 5px 10px;
+    border: 1px color-mix(in srgb, white, transparent 45%) double;
+    padding: 3px 12px;
     position: relative;
-    left: 25px;
+    left: 33px;
     bottom: -35px;
     text-decoration: none;
 }
@@ -157,8 +177,24 @@ body {
 /* the thingy uhhh h2 tags yayayayaya */
 #MainContent h2 {
     color: #404570;
-    font-weight: regular;
+    font-weight: normal;
 }
-#Latest li {
+#MainContent li {
     margin: 0 0 16px -12px;
+}
+
+
+
+/* fake NEWS!!! */
+#Latest a:hover {
+    text-decoration: underline;
+}
+
+
+/* Featured Downloads NO DOWNLOADSD !!!! SIGMA AEROS ONLYYYY!!!! */
+#SmolContainer {
+    position: relative
+}
+#SmolContainer a:hover {
+    text-decoration: underline;
 }
