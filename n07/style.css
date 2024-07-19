@@ -24,11 +24,11 @@ body {
 fg.style.transform = `translateY(${scroll * 0.5}px)`; */
 
 #bg {
-	transform: translateY(calc(var(--scroll) * 0.75px));
+	transform: translateY(calc(var(--scroll) * 0.75));
 }
 
 #fg {
-	transform: translateY(calc(var(--scroll) * 0.5px));
+	transform: translateY(calc(var(--scroll) * 0.5));
 }
 
 #bg-container {
