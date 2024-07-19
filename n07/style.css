@@ -18,6 +18,8 @@ body {
 	top: 0;
 	left: 0;
 	transition: transform 0.01s;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 /* bg.style.transform = `translateY(${scroll * 0.75}px)`;
@@ -36,6 +38,8 @@ fg.style.transform = `translateY(${scroll * 0.5}px)`; */
 	position: absolute;
 	top: 0;
 	left: 0;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 h1,

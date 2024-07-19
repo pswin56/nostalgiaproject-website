@@ -53,29 +53,27 @@
 				const bg = document.getElementById("bg");
 				const fg = document.getElementById("fg");
 				const container = document.getElementById("bg-container");
-				let lastKnownScrollPos = 0;
-				let ticking = false;
-
-				const onScroll = (pos) => {
-					bg.style.transform = `translateY(${pos * 0.75}px)`;
-					fg.style.transform = `translateY(${pos * 0.5}px)`;
-					container.style.filter = `blur(${pos * 0.025}px)`;
-					const bottom = fg.getBoundingClientRect().bottom;
-					const rect = bg.getBoundingClientRect();
-					const bottomInBg = bottom - rect.top - 8;
-					bg.style.maskImage = `linear-gradient(to bottom, black ${bottomInBg}px, transparent ${bottomInBg}px)`;
-				}
-
-				window.addEventListener("scroll", (e) => {
-					lastKnownScrollPos = window.scrollY;
-					if (!ticking) {
-						requestAnimationFrame(() => {
-							onScroll(lastKnownScrollPos);
-							ticking = false;
-						});
-						ticking = true;
+				let lastPos = 0;
+				const anim = () => {
+					const pos = window.scrollY;
+					if (pos !== lastPos) {
+						bg.style.transform = `translateZ(0) translateY(${
+							pos * 0.75
+						}px)`;
+						fg.style.transform = `translateZ(0) translateY(${
+							pos * 0.5
+						}px)`;
+						// container.style.filter = `blur(${pos * 0.025}px)`;
+						const bottom = fg.getBoundingClientRect().bottom;
+						const rect = bg.getBoundingClientRect();
+						const bottomInBg = bottom - rect.top - 8;
+						bg.style.maskImage = `linear-gradient(to bottom, black ${bottomInBg}px, transparent ${bottomInBg}px)`;
 					}
-				})
+					lastPos = pos;
+					requestAnimationFrame(anim);
+				};
+
+				requestAnimationFrame(anim);
 			});
 		</script>
 		<script>
