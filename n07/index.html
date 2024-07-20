@@ -53,11 +53,24 @@
 				const bg = document.getElementById("bg");
 				const mid = document.getElementById("mid");
 				const fg = document.getElementById("fg");
+				const content = document.getElementById("page-content");
 				const container = document.getElementById("bg-container");
-				let lastPos = 0;
-				const anim = () => {
-					const pos = window.scrollY;
-					if (pos !== lastPos) {
+				let lastPos = window.scrollY;
+				let pos = window.scrollY;
+				const anim = (e) => {
+					const rect = content.getBoundingClientRect();
+					pos += e.deltaY;
+					// clamp pos between 0 and rect.height
+					pos = Math.min(
+						rect.height - window.innerHeight,
+						Math.max(0, pos)
+					);
+					console.log(pos);
+					if (
+						pos !== lastPos &&
+						window.scrollY > 0 &&
+						window.scrollY + window.innerHeight < rect.height
+					) {
 						container.style.setProperty("--scroll", pos + "px");
 						const bottom = fg.getBoundingClientRect().bottom;
 						const rect = bg.getBoundingClientRect();
@@ -68,10 +81,11 @@
 						mid.style.maskImage = `linear-gradient(to bottom, black ${bottomInMid}px, transparent ${bottomInMid}px)`;
 					}
 					lastPos = pos;
-					requestAnimationFrame(anim);
 				};
-
-				requestAnimationFrame(anim);
+				container.style.setProperty("--scroll", pos + "px");
+				window.addEventListener("wheel", (e) => {
+					requestAnimationFrame(() => anim(e));
+				});
 			});
 		</script>
 		<script>
