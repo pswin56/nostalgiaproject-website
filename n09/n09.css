@@ -1,201 +1,236 @@
-/* the body and links */
+/* body */
 body {
-    background: #daf3fd;
-    min-height: 100%;
     height: 100%;
-    margin: 0px;
-    text-align: center;
-    font-family: "Segoe UI", "Noto Sans", verdana, arial, sans-serif;
-    font-size: .83em;
-    color: #333333;
+    min-height: 98.80vh;
+    width: 1332px;
+    min-width: 1332px;
+    background: linear-gradient(to bottom, #2e7fba 60%, #6884aa);
+    background-repeat: no-repeat;
+    font-family: "Segoe UI", "Noto Sans", verdana, arial;
+    color: white;
 }
-#BodyContainer {
-    position: relative;
-    min-height: 100%;
-    width: 942px;
-    vertical-align: top;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-    z-index: 0;
-    background-color: #FFFFFF;
-    margin-top: -5px;
-}
-a {
-    text-decoration:  none;
-}
-
-
-
-/* main header */
-.header-gradient {
-    background: url('resources/gradient.png') repeat-x scroll 0 -16px;
-    height: 130px;
+#LightRays {
+    background: linear-gradient(155deg, transparent 20%, color-mix(in srgb, white, transparent 60%), transparent 80%);
+    mask-image: linear-gradient(70deg, transparent 0%, black 75%);
+    height: 50px;
+    min-height: 94.25vh;
+    width: 1340px;
+    min-width: 1340px;
     position: absolute;
+    display: block;
     z-index: -1;
-    height: 130px;
-    width: 100%;
+    margin: 36px 0 0 0;
+    color: transparent;
 }
-.header-bg {
-    background: url('resources/background.png') no-repeat scroll 0 -520px;
-    width: 100%;
-    height: 130px;
-    overflow: hidden;
+.separator {
+    margin: 0 13px 0 13px;
+}
+
+
+
+/* yes. */
+.zeronine-funi {
     position: absolute;
-    z-index: -1;
-    margin: 0px 171px;
-}
-
-
-
-/* the top links */
-.links {
-    width: 370px;
-    margin-left: auto;
-    margin-right: 10px;
-    padding-top: 10px;
-    z-index: 1;
-    text-align: right;
-}
-.links span {
-    padding: 0 5px;
-}
-.country {
-    display: inline-block;
-    font-weight: bold;
-    margin: 0 7px 0 0;
-}
-
-
-
-/* central header */
-.branding {
-    position: relative;
-    left: 13px;
+    right: 100px;
     top: 15px;
 }
-#BingChilling {
-    position: relative;
-    left: 300px;
-    top: -15px;
-}
-.searchbar {
-    background: white no-repeat url("resources/BINGchilling.png"); 
-    background-position: 90% 100%;
-    appearance: none;
-    border: 1px black solid;
-    width: 300px;
-    padding: 6px;
-    color: #515151;
-    font-style: italic;
-    font-size: 8.5pt;
-}
-.searchbarbutton {
-    appearance: none;
-    border: none;
-    background: no-repeat url("resources/searchbarbutton.png");
-    width: 20px;
-    height: 20px; 
-    position: absolute;
-    margin: 3px 0 0 -23px;
-}
 
 
 
-/* navigation links */
-.navigation {
-    font-size: 12pt;
+/* top banner */
+.topbanner {
+    background: linear-gradient(to bottom, color-mix(in srgb, white, transparent 10%), color-mix(in srgb, #e1e1e1, transparent 35%),  color-mix(in srgb, #e7e7e7, transparent 25%));
+    box-shadow: 0 0 2px black;
+    margin: -8px;
+    padding: 3px 0 3px 0;
+    font-size: 10.5pt;
+}
+.controls-image {
+    width: 400px;
+    margin-left: auto;
     display: flex;
-    margin: 0px 0 0 18px;
+    z-index: 1;
+}
+.controls-image span {
+    margin: 0 0 0 6px;
+    padding: 2px 0 0 5px;
+}
+.seedetails-ie {
+    background: linear-gradient(to bottom, #ecab22,#e77207);
+    border: 2px color-mix(in srgb, white, transparent 25%) solid;
+    padding: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.seedetails-ie::after {
+    content: url("resources/download_white.png");
     position: relative;
+    top: 3px;
+    margin: 0 3px 0 2px;
 }
-.navigation a {
-    margin: 0 25px 0 0;
+.close-ie {
+    background: linear-gradient(to bottom, #64aadd,#4a8ebb);
+    border: 2px color-mix(in srgb, white, transparent 25%) solid;
+    padding: 4px;
+    border-radius: 8px;
+    cursor: pointer;
 }
-.navigation a.selected {
+.close-ie::after {
+    content: url("resources/close_white.png");
+    position: relative;
+    top: 3px;
+    margin: 0 3px 0 2px;
+}
+
+
+
+/* branding part */
+.branding {
+    margin-top: 25px;
+    margin-left: 50px;
+}
+.branding .caption {
+    position: relative;
+    font-size: 18pt;
+    top: 10px;
+    left: -350px;
+}
+
+
+
+/* the previews and categories div */
+.previews-controls {
+    margin: 0 65px;
+}
+
+/* previews */
+.screenshots {
+    margin: 125px 20px 75px 20px;
+    display: flex;
+    justify-content: space-between;
+    filter: drop-shadow(0px 2px 3px color-mix(in srgb, black, transparent 25%));
+}
+
+/* categories idk why the parent div is called previews and controls but eh fuck it */
+.categories {
+    padding: 25px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    font-size: 10.5pt;
+    filter: drop-shadow(-1px 1px 1px color-mix(in srgb, black, transparent 25%));
+}
+.categories span {
+    padding: 0 15px;
+}
+
+/* light glow + separator line */
+.lightglow {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, white, transparent 75%), transparent);
+    height: 30px;
+    color: transparent;
+}
+.seprtr-cont {
+    background: radial-gradient(white, transparent 68%);
+    filter: drop-shadow(0 0.5px 1px color-mix(in srgb, black, transparent 50%));
+    color: transparent;
+    font-size: 0.5pt;
+    height: 1px;
+}
+
+
+
+/* content2 */
+.content2 {
+    margin: 0px 65px;
+    display: flex;
+}
+
+/* container 1 */
+.container1 {
+    margin: 0 10px 0 0;
+    background: #f0f0f0;
     color: black;
+    font-size: 10pt;
+    font-family: Tahoma;
+    width: 700px;
+    border: 1px white solid;
+    border-radius: 4px;
 }
-.navigation a {
+.container1 p {
+    padding: 0 0 0 10px;
+}
+.container1 .header {
+    padding: 10px;
+    background: linear-gradient(to right, #3e8bc3, transparent 60%);
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-size: 12pt;
+}
+
+/* container 2 */
+.container2 {
+    background: #f0f0f0;
+    color: black;
+    font-size: 10pt;
+    font-family: Tahoma;
+    width: 600px;
+    border: 1px white solid;
+    border-radius: 4px;
+}
+.container2 p {
+    padding: 0 0 0 10px;
+}
+.container2 .question {
+    border: 2px white solid;
+    border-radius: 34px;
+    position: absolute;
+    right: 40px;
+    top: 600px;
+}
+.container2 .header {
+    padding: 10px;
+    background: linear-gradient(to right, #3e8bc3, transparent 70%);
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-size: 12pt;
+}
+.minicontent {
+    display: flex;
+    justify-content: center;
+    padding: 0 1px 1px 0;
+}
+
+
+/* footer */
+.footer {
+    margin: 10px 64px 70px 65px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #f1f1f3, #e4e4e4);
+    align-items: center;
+    border: 1px white solid;
+    border-radius: 4px;
+    color: black;
+    padding: 20px 13px 20px 13px;
+}
+.footer img {
+    opacity: 0.7;
+}
+.footer .nostalgia-branding {
+    display: flex;
+    flex-direction: column;
+    color: #7a7a7a;
+    font-size: 8pt;
+}
+.footer .links {
+    color: #7a7a7a;
+    font-size: 11pt;
     text-decoration: none;
-    color: #2775df;
+    padding: 0 100px 0 0;
 }
-.navigation a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
-    color: #0069af;
-}
-.navigation a.selected:hover {
-    color: #0069af;
-    text-decoration: none;
-}
-
-
-
-
-/* main content */
-#MainContent {
-    margin: 45px 0 0 50px !important;
-    background-color: white;
-}
-
-/* banner */
-#Banner {
-    height: 248px;
-    width: 839px;
-    background: url("resources/beautyfox_banner.png");
-
-}
-#Banner p {
+.footer .links a:hover {
     font-weight: bold;
-    color: white;
-    font-size: 22pt;
-    width: 300px;
-    text-align: start;
-    position: relative;
-    top: 50px;
-    left: 15px;
-}
-#Banner a {
-    background-color: #0066cc;
-    color: white;
-    border: 1px color-mix(in srgb, white, transparent 45%) double;
-    padding: 3px 12px;
-    position: relative;
-    left: 33px;
-    bottom: -35px;
-    text-decoration: none;
-}
-#Banner a:hover {
-    background-color: color-mix(in srgb, #0066cc, white 25%);
     cursor: pointer;
-}
-#Banner a:active {
-    background-color: color-mix(in srgb, #0066cc, black 25%);
-    cursor: pointer;
-}
-
-/* the thingy uhhh h2 tags yayayayaya */
-#MainContent h2 {
-    color: #404570;
-    font-weight: normal;
-}
-#MainContent li {
-    margin: 0 0 16px -12px;
-}
-
-
-
-/* fake NEWS!!! */
-#Latest a:hover {
-    text-decoration: underline;
-}
-
-
-/* Featured Downloads NO DOWNLOADSD !!!! SIGMA AEROS ONLYYYY!!!! */
-#SmolContainer {
-    position: relative
-}
-#SmolContainer a:hover {
-    text-decoration: underline;
 }
