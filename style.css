@@ -1,123 +1,18 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
-
-/* Navbar container */
-.navbar {
-  width: 721px;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  padding-left: 2px;
-  padding-right: 2px;
-  background-image: linear-gradient(to bottom, #ffffff , #C1C1C0);
-  border-style: solid;
-  border-width: 1px;
-  border-color: #547E99;
-  font-family: Arial;
-}
-
-/* The dropdown container */
-.dropdown {
-  padding: 0px;
-  float: left;
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  border-style: dotted;
-  border-top-width: 0px;
-  border-bottom-width: 0px;
-  border-left-width: 1px;
-  border-right-width: 1px;
-  border-color: #A6A6A6;
-  color: #333333;
-  padding: 15px 5px;
-  background-color: inherit;
-}
-
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: white;
-  text-decoration: underline;
-  color: black;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  padding: 2px;
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-
-  z-index: 1;
-}
-
-.dropdown-content h4 {
-  margin:0;
-}
-
-.dropdown-content li {
-  margin:0;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: white;
-  text-decoration: underline;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-  border-style: solid;
-  border-width: 1px;
-  border-top-width: 0px;
-  border-color: #3A3A3A;
-}
-
-footer{
-  width: 721px;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  background-image: url(resources/m_head_blend.png);
-  border-style: solid;
-  border-width: 1px;
-  border-color: #547E99;
-  font-family: Arial;
-}
-
+/* This is the CSS of the Nostalgia Project website's homepage */
 body {
+  text-shadow: 0px 1px 0px white;
+  height: 100%;
+  padding: 10px;
+  padding-top: 50px;
   margin: auto;
-  width: 932px;
-  background-color: #E0EFF6;
-  background-image: url(resources/m_head_blend.png);
-  background-repeat: repeat-x;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #599BD1;
-  padding-bottom: 20px;
-  color: #000000;
-  font-size: 70%;
-  font-family: Tahoma,Verdana,'Segoe UI',sans-serif
-}
-
-a:link {
-  text-decoration: none; 
-}
-
-a:hover {
-  text-decoration: underline;
+  width: 65%;
+  background-color: #ebebeb;
+  color: #333333;
+  text-decoration: none;
+  font-family: Sans-Serif;
+  box-shadow: 0px 0px 50px 25px black;
 }
 
 html{
-  background-image: url(resources/bg.png);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 100%;
+  background-color: #202020;
 }
