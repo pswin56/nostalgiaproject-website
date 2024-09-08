@@ -1,9 +1,24 @@
 /* This is the CSS of the Nostalgia Project website's homepage */
+
+.PageTitle {
+  border-bottom: 1px solid #333333;
+  font-size: 24px;
+  text-shadow: none;
+  color: #333333;
+}
+
+.HomepageBottom {
+  text-align: center;
+  border-top: 1px dashed #333333;
+  line-height: 0.5;
+  font-size: 12px;
+  color: #333333;
+}
+
 body {
   text-shadow: 0px 1px 0px white;
   height: 100%;
   padding: 10px;
-  padding-top: 50px;
   margin: auto;
   width: 65%;
   background-color: #ebebeb;
@@ -14,5 +29,6 @@ body {
 }
 
 html{
-  background-color: #202020;
+  background-image: url(resources/green.jpg);
+  background-size: 100%;
 }
